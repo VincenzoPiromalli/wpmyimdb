@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP MyIMDB
  * Plugin URI: https://sellix.io/fr0zen
- * Description: MyIMDB for WordPress is an advanced  plugin to turn your WordPress Blog into a Movie & TV Show Database.
+ * Description: WP My IMDB for WordPress is an advanced plugin to turn your WordPress Blog into a Movie & TV Show Database.
  * Version: 1.0
  * Author: fr0zen
  * Author URI: https://vincenzopiromalli.ml/
@@ -27,12 +27,12 @@ $('#imdb-myimdb-api-generate').click(function () {
       $('#title').val(data.getTitle.value);
       $('#content.wp-editor-area').val(data.getDescription.value);
       $('input[name="imdb-aka"]').val(data.getAka.value);
-	  $('input[name="imdb-tagline"]').val(data.getTagline.value);
+      $('input[name="imdb-tagline"]').val(data.getTagline.value);
       $('input[name="imdb-imdb"]').val(id);
       $('input[name="imdb-runtime"]').val(data.getRuntime.value);
       $('input[name="imdb-releasedate"]').val(data.getReleaseDate.value);
       $('input[name="imdb-url"]').val(data.getUrl.value);
-	  $('input[name="imdb-description"]').val(data.getPlot.value);
+      $('input[name="imdb-description"]').val(data.getPlot.value);
       $('input[name="imdb-trailer"]').val(data.getTrailerAsUrl.value);
       $('input[name="imdb-awards"]').val(data.getAwards.value);
       $('input[name="imdb-character"]').val(data.getCastAndCharacter.value);
@@ -51,16 +51,13 @@ $('#imdb-myimdb-api-generate').click(function () {
       $('#new-tag-director').val(data.getDirector.value);
       $('#new-tag-country').val(data.getCountry.value);
       $('#new-tag-post_tag').val(data.getPlotKeywords.value);
-	  $('#new-tag-genre').val(data.getGenre.value);
+      $('#new-tag-genre').val(data.getGenre.value);
       $('#new-tag-language').val(data.getLanguage.value);
       $('#new-tag-location').val(data.getLocation.value);
       $('#new-tag-creator').val(data.getCreator.value);
       $('#new-tag-company').val(data.getCompany.value);
       $('#new-tag-writer').val(data.getWriter.value);
       $('#url_to_image_meta_box > div.inside > div > ul > li > input, input[name="imdb-image"]').val(data.getPoster.value);
-      //$('input[name="status"]').val(data.status.replace("Currently Airing", "Ongoing"));
-      //$('#new-tag-status').val(data.status.replace("Currently Airing", "Ongoing"));
-      //$('input[name="trailer_url"]').val(data.trailer_url.replace("?enablejsapi=1&wmode=opaque&autoplay=1", ""));
     })
     .then(() => {
 	  alert('Imported!');

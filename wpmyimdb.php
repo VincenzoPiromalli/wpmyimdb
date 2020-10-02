@@ -1,7 +1,7 @@
 <?php 
 /**
  * Plugin Name: WP MyIMDB
- * Plugin URI: https://sellix.io/imdb
+ * Plugin URI: https://sellix.io/fr0zen
  * Description: MyIMDB for WordPress is an advanced  plugin to turn your WordPress Blog into a Movie & TV Show Database.
  * Version: 1.0
  * Author: fr0zen

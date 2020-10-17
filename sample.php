@@ -27,6 +27,8 @@ $language = get_the_term_list($post->ID, 'language', '<span><b>Language:</b> ', 
 $company = get_the_term_list($post->ID, 'company', '<span><b>Company:</b> ', ', ', '</span><br />');
 $genre = get_the_term_list($post->ID, 'genre', '<span><b>Genre:</b> ', ', ', '</span><br />');
 $location = get_the_term_list($post->ID, 'location', '<span><b>Location:</b> ', ', ', '</span><br />');
+$writer = get_the_term_list($post->ID, 'writer', '<span><b>Writer:</b> ', ', ', '</span><br />');
+$creator = get_the_term_list($post->ID, 'creator', '<span><b>Creator:</b> ', ', ', '</span><br />');
 ?>
 <style>
 #imdb {
@@ -110,7 +112,9 @@ if(!empty($trailer)) echo  '<span><b>Trailer:</b> <a href="'.$trailer.'" rel="no
 <td>
 <?php 
 if(!empty($description)) 
-echo  '<h5>Plot</h5><br />'.$description.'<br /><br />';  
+echo  '<br /><h5>Plot</h5><br />'.$description.'<br /><br />';  
+echo $writer;
+echo $creator;
 echo $director;
 echo $actors; 
 ?>

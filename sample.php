@@ -72,7 +72,7 @@ img {
 <tbody>
 <tr>
 <td class="imdb-poster" width="40%" rowspan="3">
-<?php if($values = get_post_custom_values("imdb-image")) { ?><img width="100%" src="<?php echo $values[0]; ?>" alt="<?php the_title(); ?>"><?php } else { if ( has_post_thumbnail() ) { the_post_thumbnail(); } } ?>
+<?php { if ( has_post_thumbnail() ) { the_post_thumbnail(); } } ?>
 </td>
 <td>
 <h3><?php the_title(); ?></h3>

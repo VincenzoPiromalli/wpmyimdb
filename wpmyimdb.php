@@ -77,7 +77,7 @@ function MyIMDB_API_Meta_Box($post){
 <div class="rwmb-meta-box">
 	<div class="rwmb-field rwmb-text-wrapper">
 		<div class="rwmb-label">
-			<label for="imdb-myimdb-api">MyIMDB API</label>
+			<label for="imdb-myimdb-api">Insert IMDB ID</label>
 		</div>
 		<div class="rwmb-input ui-shortable">
 			<div class="rwmb-clone rwmb-text-clone">

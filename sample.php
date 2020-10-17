@@ -102,7 +102,7 @@ if(!empty($color)) echo  '<span><b>Color:</b> '.$color.'</span><br />';
 if(!empty($aspectratio)) echo  '<span><b>Aspect Ratio:</b> '.$aspectratio.'</span><br />'; 
 if(!empty($sound)) echo  '<span><b>Sound Mix:</b> '.$sound.'</span><br />'; 
 if(!empty($aka)) echo  '<span><b>Aka:</b> '.$aka.'</span><br />';
-if(!empty($trailer)) echo  '<span><b>Trailer:</b> <a href="'.$trailer.'" rel="noreferrer" target="_blank">WATCH</a></span><br />'; 
+if(!empty($trailer)) echo  '<span><b>Video:</b> <a href="'.$trailer.'" rel="noreferrer" target="_blank">WATCH</a></span><br />'; 
 //if(!empty($character)) echo  '<span><b>Character:</b> '.$character.'</span><br />'; 
 //if(!empty($certification)) echo  '<span><b>Certification:</b> '.$certification.'</span><br />'; 
 ?>
@@ -112,7 +112,7 @@ if(!empty($trailer)) echo  '<span><b>Trailer:</b> <a href="'.$trailer.'" rel="no
 <td>
 <?php 
 if(!empty($description)) 
-echo  '<br /><h5>Plot</h5><br />'.$description.'<br /><br />';  
+echo  '<h5>Plot</h5><p>'.$description.'</p><br />';  
 echo $writer;
 echo $creator;
 echo $director;
@@ -122,3 +122,4 @@ echo $actors;
 </tr>
 </tbody>
 </table>
+<?php //the_content(); ?>

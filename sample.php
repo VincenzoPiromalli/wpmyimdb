@@ -1,12 +1,11 @@
 <?php  
-$title = get_post_meta( get_the_ID(), 'imdb-title', true );
-$description = get_post_meta( get_the_ID(), 'imdb-description', true );
-$aka = get_post_meta( get_the_ID(), 'imdb-aka', true );
 $tagline = get_post_meta( get_the_ID(), 'imdb-tagline', true );
+$description = get_post_meta( get_the_ID(), 'imdb-description', true );
 $imdb_id = get_post_meta( get_the_ID(), 'imdb-imdb', true );
 $certification = get_post_meta( get_the_ID(), 'imdb-certification', true );
 $mpaa = get_post_meta( get_the_ID(), 'imdb-mpaa', true );
 $vote_average = get_post_meta( get_the_ID(), 'imdb-rating', true );
+$vote_count = get_post_meta( get_the_ID(), 'imdb-votes', true );
 $runtime = get_post_meta( get_the_ID(), 'imdb-runtime', true );
 $release_date = get_post_meta( get_the_ID(), 'imdb-releasedate', true );
 $budget = get_post_meta( get_the_ID(), 'imdb-budget', true );
@@ -15,9 +14,11 @@ $awards = get_post_meta( get_the_ID(), 'imdb-awards', true );
 $character = get_post_meta( get_the_ID(), 'imdb-character', true );
 $popularity = get_post_meta( get_the_ID(), 'imdb-userreview', true );
 $sound = get_post_meta( get_the_ID(), 'imdb-sound', true );
-$vote_count = get_post_meta( get_the_ID(), 'imdb-votes', true );
 $aspectratio = get_post_meta( get_the_ID(), 'imdb-aspectratio', true );
 $color = get_post_meta( get_the_ID(), 'imdb-color', true );
+$aka = get_post_meta( get_the_ID(), 'imdb-aka', true );
+$trailer = get_post_meta( get_the_ID(), 'imdb-trailer', true );
+
 $director = get_the_term_list($post->ID, 'director', '<span><b>Director:</b> ', ', ', '</span><br />');
 $actors = get_the_term_list($post->ID, 'actors', '<span><b>Actors:</b> ', ', ', '</span><br />');
 $year = get_the_term_list($post->ID, 'year', '<span><b>Year:</b> ', ', ', '</span><br />');
@@ -90,9 +91,7 @@ echo $location;
 if(!empty($imdb_id)) echo  '<span><b>IMDB:</b> <a href="https://imdb.com/title/'.$imdb_id.'/reference" rel="noreferrer" target="_blank">'.$imdb_id.'</a></span><br />'; 
 if(!empty($vote_average)) echo  '<span><b>Rating:</b> '.$vote_average.'</span><br />'; 
 if(!empty($vote_count)) echo  '<span><b>Votes:</b> '.$vote_count.'</span><br />'; 
-//if(!empty($character)) echo  '<span><b>Character:</b> '.$character.'</span><br />'; 
 if(!empty($popularity)) echo  '<span><b>Reviews:</b> '.$popularity.'</span><br />'; 
-//if(!empty($certification)) echo  '<span><b>Certification:</b> '.$certification.'</span><br />'; 
 if(!empty($mpaa)) echo  '<span><b>Certification:</b> '.$mpaa.'</span><br />'; 
 if(!empty($awards)) echo  '<span><b>Awards:</b> '.$awards.'</span><br />'; 
 if(!empty($budget)) echo  '<span><b>Budget:</b> '.$budget.'</span><br />'; 
@@ -101,13 +100,17 @@ if(!empty($color)) echo  '<span><b>Color:</b> '.$color.'</span><br />';
 if(!empty($aspectratio)) echo  '<span><b>Aspect Ratio:</b> '.$aspectratio.'</span><br />'; 
 if(!empty($sound)) echo  '<span><b>Sound Mix:</b> '.$sound.'</span><br />'; 
 if(!empty($aka)) echo  '<span><b>Aka:</b> '.$aka.'</span><br />';
+if(!empty($trailer)) echo  '<span><b>Trailer:</b> <a href="'.$trailer.'" rel="noreferrer" target="_blank">WATCH</a></span><br />'; 
+//if(!empty($character)) echo  '<span><b>Character:</b> '.$character.'</span><br />'; 
+//if(!empty($certification)) echo  '<span><b>Certification:</b> '.$certification.'</span><br />'; 
 ?>
 </td>
 </tr>
 <tr>
 <td>
-<?php if(!empty($description)) echo  '<h5>Plot</h5><br />'.$description.'<br /><br />';  ?>
 <?php 
+if(!empty($description)) 
+echo  '<h5>Plot</h5><br />'.$description.'<br /><br />';  
 echo $director;
 echo $actors; 
 ?>
@@ -116,6 +119,3 @@ echo $actors;
 </tbody>
 </table>
 <?php if($values = get_post_custom_values("imdb-trailer")) { ?><iframe width="100%" height="420" src="<?php echo $values[0]; ?>" frameborder="0" allowfullscreen></iframe><?php } else { ?><?php } ?>
-
-
-

@@ -118,4 +118,3 @@ echo $actors;
 </tr>
 </tbody>
 </table>
-<?php if($values = get_post_custom_values("imdb-trailer")) { ?><iframe width="100%" height="420" src="<?php echo $values[0]; ?>" frameborder="0" allowfullscreen></iframe><?php } else { ?><?php } ?>

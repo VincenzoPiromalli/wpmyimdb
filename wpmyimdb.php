@@ -5,7 +5,7 @@
  * Description: WP My IMDB for WordPress is an advanced plugin to turn your WordPress Blog into a Movie & TV Show Database.
  * Version: 1.0
  * Author: fr0zen
- * Author URI: https://vincenzopiromalli.ml/
+ * Author URI: https://ko-fi.com/vincenzopiromalli
  * Copyright: (c) 2020 Vincenzo Piromalli. All rights reserved
  */
  
@@ -61,6 +61,7 @@ $('#imdb-myimdb-api-generate').click(function () {
     })
     .then(() => {
 	  alert('Imported!');
+	  console.log('Imported!');
     })
     .catch(e => {
 	  alert('Error!');
@@ -92,6 +93,10 @@ function MyIMDBPlugin_Setup(){
 add_action("add_meta_boxes", "MyIMDB_API_Add_Meta_Box");
 add_filter('rwmb_meta_boxes', 'imdb_meta_box' );
 add_filter('use_block_editor_for_post', '__return_false');
+add_action('admin_menu', 'plugin_admin_add_page');
+function plugin_admin_add_page() {
+add_menu_page( 'WP MyIMDB', 'WP MyIMDB', 'manage_options', 'wpmyimdb/adminpage.php');
+}
 require_once PLUGIN_DIR."/lib/core/tax.php";
 }
 add_action("after_setup_theme", "MyIMDBPlugin_Setup");

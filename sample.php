@@ -3,20 +3,16 @@ $title = get_post_meta( get_the_ID(), 'imdb-title', true );
 $description = get_post_meta( get_the_ID(), 'imdb-description', true );
 $aka = get_post_meta( get_the_ID(), 'imdb-aka', true );
 $tagline = get_post_meta( get_the_ID(), 'imdb-tagline', true );
-$original_title = get_post_meta( get_the_ID(), 'original_title', true );
 $imdb_id = get_post_meta( get_the_ID(), 'imdb-imdb', true );
 $certification = get_post_meta( get_the_ID(), 'imdb-certification', true );
 $mpaa = get_post_meta( get_the_ID(), 'imdb-mpaa', true );
 $vote_average = get_post_meta( get_the_ID(), 'imdb-rating', true );
 $runtime = get_post_meta( get_the_ID(), 'imdb-runtime', true );
-$countries = get_post_meta( get_the_ID(), 'imdb-countries', true );
 $release_date = get_post_meta( get_the_ID(), 'imdb-releasedate', true );
 $budget = get_post_meta( get_the_ID(), 'imdb-budget', true );
 $revenue = get_post_meta( get_the_ID(), 'imdb-gross', true );
 $awards = get_post_meta( get_the_ID(), 'imdb-awards', true );
 $character = get_post_meta( get_the_ID(), 'imdb-character', true );
-$homepage = get_post_meta( get_the_ID(), 'imdb-homepage', true );
-$youtube_id = get_post_meta( get_the_ID(), 'imdb-youtube_id', true );
 $popularity = get_post_meta( get_the_ID(), 'imdb-userreview', true );
 $sound = get_post_meta( get_the_ID(), 'imdb-sound', true );
 $vote_count = get_post_meta( get_the_ID(), 'imdb-votes', true );
@@ -84,7 +80,6 @@ img {
 <td>
 <?php 
 echo $years;
-
 if(!empty($runtime)) echo  '<span><b>Duration:</b> '.$runtime.'</span><br />';
 if(!empty($release_date)) echo  '<span><b>Release:</b> '.$release_date.'</span><br />'; 
 echo $genre;
@@ -111,9 +106,7 @@ if(!empty($aka)) echo  '<span><b>Aka:</b> '.$aka.'</span><br />';
 </tr>
 <tr>
 <td>
-<h5>Plot</h5>
-<?php if(!empty($description)) echo  ''.$description.'<br />';  ?>
-<br/>
+<?php if(!empty($description)) echo  '<h5>Plot</h5><br />'.$description.'<br /><br />';  ?>
 <?php 
 echo $director;
 echo $actors; 
@@ -123,4 +116,6 @@ echo $actors;
 </tbody>
 </table>
 <?php if($values = get_post_custom_values("imdb-trailer")) { ?><iframe width="100%" height="420" src="<?php echo $values[0]; ?>" frameborder="0" allowfullscreen></iframe><?php } else { ?><?php } ?>
+
+
 
